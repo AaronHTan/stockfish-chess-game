@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess vs Stockfish</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chess vs Stockfish</h1>
+        
+        <div class="game-controls">
+            <button id="newGameBtn">New Game</button>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="1">Easy (Depth 1)</option>
+                <option value="3" selected>Medium (Depth 3)</option>
+                <option value="5">Hard (Depth 5)</option>
+                <option value="8">Expert (Depth 8)</option>
+            </select>
+            <button id="flipBoardBtn">Flip Board</button>
+        </div>
+
+        <div class="game-area">
+            <div id="board" class="chessboard"></div>
+            <div class="game-info">
+                <div id="status">White to move</div>
+                <div id="thinking" class="thinking hidden">Stockfish is thinking...</div>
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <div id="moveHistory"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/chess.js@1.0.0/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="stockfish.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
